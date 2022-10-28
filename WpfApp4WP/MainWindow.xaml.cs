@@ -82,18 +82,13 @@ namespace WpfApp4WP
             var btn = sender as Button;
             if (btn is null)
                 return;
-            switch (btn?.Content)
+
+            txtBoxWrite.FontStyle = btn.Content switch
             {
-                case "𝘪𝘵":
-                    txtBoxWrite.FontStyle = FontStyles.Italic;
-                    break;
-                case "Ob":
-                    txtBoxWrite.FontStyle = FontStyles.Oblique;
-                    break;
-                case "N":
-                    txtBoxWrite.FontStyle = FontStyles.Normal;
-                    break;
-            }
+                "𝘪𝘵" => txtBoxWrite.FontStyle = FontStyles.Italic,
+                "Ob"=> txtBoxWrite.FontStyle = FontStyles.Oblique,
+                "N"=>txtBoxWrite.FontStyle = FontStyles.Normal
+            };
         }
 
 
