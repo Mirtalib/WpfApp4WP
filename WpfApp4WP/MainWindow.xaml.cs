@@ -25,11 +25,16 @@ namespace WpfApp4WP
         public MainWindow()
         {
             InitializeComponent();
+
+            for (int i = 0; i < 100; i++)
+            {
+                ComboboxFontSize.Items.Add(i.ToString());
+            }
         }
 
 
 
-        private void WriteFile(string fileName , SaveFileDialog _saveFileDialog) 
+        private void WriteFile(string fileName, SaveFileDialog _saveFileDialog)
         {
             _saveFileDialog.FileName = fileName;
             if (_saveFileDialog.ShowDialog() == true)
@@ -40,6 +45,7 @@ namespace WpfApp4WP
                 writer.Close();
                 MessageBox.Show("File Succesfully Saved...", "", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+
         }
 
         private void OpenMenuItem_Click(object sender, RoutedEventArgs e)
@@ -87,7 +93,42 @@ namespace WpfApp4WP
                 case "N":
                     txtBoxWrite.FontStyle = FontStyles.Normal;
                     break;
-            } 
+            }
+        }
+
+        private void txtBoxFontSize_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            int size = 32;
+
+            //try
+            //{
+            //    size = Convert.ToInt32(txtBoxFontSize.Text);
+            //}
+            //catch (Exception)
+            //{
+
+            //    MessageBox.Show("Enter To Number" ,"",MessageBoxButton.OK,MessageBoxImage.Warning);
+            //    txtBoxFontSize.Text = null;
+            //    return;
+            //}
+
+            //if (size >  0 && size < 100)
+            //{
+            //    txtBoxWrite.FontSize = size;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Auto Of Range", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+            //}
+        }
+
+        private void ComboboxFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int size;
+            size = Convert.ToInt32(ComboboxFontSize.SelectedItem);
+            txtBoxWrite.FontSize = size;
+        
         }
     }
 }
