@@ -96,32 +96,7 @@ namespace WpfApp4WP
             }
         }
 
-        private void txtBoxFontSize_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-            int size = 32;
-
-            //try
-            //{
-            //    size = Convert.ToInt32(txtBoxFontSize.Text);
-            //}
-            //catch (Exception)
-            //{
-
-            //    MessageBox.Show("Enter To Number" ,"",MessageBoxButton.OK,MessageBoxImage.Warning);
-            //    txtBoxFontSize.Text = null;
-            //    return;
-            //}
-
-            //if (size >  0 && size < 100)
-            //{
-            //    txtBoxWrite.FontSize = size;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Auto Of Range", "", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //}
-        }
 
         private void ComboboxFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
